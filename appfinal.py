@@ -110,7 +110,7 @@ if st.button("Predict Clusters"):
         x = x.dropna()
 
     valid_idx = x.index
-    x_scaled = std.transform(x)
+    x_scaled = scaler_standard.transform(x)
     x_pca = pca.transform(x_scaled)
     labels = kmeans.predict(x_pca)
 
@@ -168,4 +168,5 @@ if st.button("Predict Clusters"):
             mime="text/csv"
 
         )
+
 
